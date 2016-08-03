@@ -10,3 +10,9 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print "Enter a store name: "
+input = gets.chomp.strip
+bad_store = Store.create(name: input)
+bad_store.errors[:annual_revenue].each { |err| puts err }
+bad_store.errors[:womens_apparel].each { |err| puts err }
+bad_store.errors[:mens_apparel].each { |err| puts err }
